@@ -222,6 +222,11 @@
     //       "tags": ["tools"]
     //     }
     {
+      "packageName": "@local/eslint-config-base",
+      "projectFolder": "tools/eslint-config-base",
+      "reviewCategory": "tools"
+    },
+    {
       "packageName": "@local/storybook",
       "projectFolder": "apps/storybook",
       "reviewCategory": "apps"
