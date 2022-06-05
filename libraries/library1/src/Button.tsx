@@ -1,5 +1,6 @@
 import React from 'react';
-import './Button.css';
+import { createUseStyles } from 'react-jss';
+import buttonStyles from './button.styles';
 
 export interface ButtonProps {
   primary?: boolean;
@@ -9,6 +10,8 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
+const useStyles = createUseStyles(buttonStyles);
+
 export const Button = ({
   primary = false,
   size = 'medium',
@@ -16,11 +19,13 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const classes = useStyles();
+  const mode = primary ? classes.primary : classes.secondary;
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={[classes.button, classes[size], mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
