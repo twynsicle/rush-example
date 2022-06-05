@@ -230,16 +230,6 @@
       "packageName": "@local/library1",
       "projectFolder": "libraries/library1",
       "reviewCategory": "libraries"
-    },
-    {
-      "packageName": "@local/react-scripts",
-      "projectFolder": "tools/react-scripts",
-      "reviewCategory": "tools"
-    },
-    {
-      "packageName": "@local/eslint-config",
-      "projectFolder": "tools/eslint-config",
-      "reviewCategory": "tools"
     }
   ]
 }
