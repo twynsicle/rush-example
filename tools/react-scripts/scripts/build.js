@@ -51,7 +51,7 @@ const config = configFactory('production');
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
 const { checkBrowsers } = require('react-dev-utils/browsersHelper');
-checkBrowsers(paths.appPath, isInteractive)
+checkBrowsers(paths.ownPath, isInteractive)
   .then(() => {
     // First, read the current file sizes in build directory.
     // This lets us display how much they changed later.
@@ -72,9 +72,13 @@ checkBrowsers(paths.appPath, isInteractive)
         console.log(chalk.yellow('Compiled with warnings.\n'));
         console.log(warnings.join('\n\n'));
         console.log(
-          '\nSearch for the ' + chalk.underline(chalk.yellow('keywords')) + ' to learn more about each warning.',
+          '\nSearch for the ' +
+            chalk.underline(chalk.yellow('keywords')) +
+            ' to learn more about each warning.',
         );
-        console.log('To ignore, add ' + chalk.cyan('// eslint-disable-next-line') + ' to the line before.\n');
+        console.log(
+          'To ignore, add ' + chalk.cyan('// eslint-disable-next-line') + ' to the line before.\n',
+        );
       } else {
         console.log(chalk.green('Compiled successfully.\n'));
       }
@@ -143,7 +147,9 @@ function build(previousFileSizes) {
           warnings: [],
         });
       } else {
-        messages = formatWebpackMessages(stats.toJson({ all: false, warnings: true, errors: true }));
+        messages = formatWebpackMessages(
+          stats.toJson({ all: false, warnings: true, errors: true }),
+        );
       }
       if (messages.errors.length) {
         // Only keep the first error. Others are often indicative
@@ -159,7 +165,9 @@ function build(previousFileSizes) {
         messages.warnings.length
       ) {
         // Ignore sourcemap warnings in CI builds. See #8227 for more info.
-        const filteredWarnings = messages.warnings.filter((w) => !/Failed to parse source map/.test(w));
+        const filteredWarnings = messages.warnings.filter(
+          (w) => !/Failed to parse source map/.test(w),
+        );
         if (filteredWarnings.length) {
           console.log(
             chalk.yellow(

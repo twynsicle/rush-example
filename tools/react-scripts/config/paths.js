@@ -39,7 +39,9 @@ const moduleFileExtensions = [
 
 // Resolve file paths in the same order as webpack
 const resolveModule = (resolveFn, filePath) => {
-  const extension = moduleFileExtensions.find((extension) => fs.existsSync(resolveFn(`${filePath}.${extension}`)));
+  const extension = moduleFileExtensions.find((extension) =>
+    fs.existsSync(resolveFn(`${filePath}.${extension}`)),
+  );
 
   if (extension) {
     return resolveFn(`${filePath}.${extension}`);
@@ -47,6 +49,8 @@ const resolveModule = (resolveFn, filePath) => {
 
   return resolveFn(`${filePath}.js`);
 };
+
+const resolveOwn = (relativePath) => path.resolve(__dirname, '..', relativePath);
 
 // config after eject: we're in ./config/
 module.exports = {
@@ -68,6 +72,9 @@ module.exports = {
   appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
   publicUrlOrPath,
+  // These properties only exist before ejecting:
+  ownPath: resolveOwn('.'),
+  ownNodeModules: resolveOwn('node_modules'), // This is empty on npm 3
 };
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
