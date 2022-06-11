@@ -29,8 +29,11 @@ jobs:
       - name: Install dependencies
         run: |
           node common/scripts/install-run-rush.js install
-          node common/scripts/install-run-rush.js update-autoinstaller --name rush-prettier
-          node common/scripts/install-run-rush.js update-autoinstaller --name rush-lint-staged
+
+      # To run lints and tests we need to ensure all of our dependencies are built first.
+      - name: Build all
+        run: |
+          node common/scripts/install-run-rush.js build --verbose
 
       - name: Lint
         run: |
@@ -39,7 +42,3 @@ jobs:
       - name: Run tests
         run: |
           node common/scripts/install-run-rush.js test --verbose
-
-      - name: Build app1
-        run: |
-          node common/scripts/install-run-rush.js build --verbose --to @local/app1
