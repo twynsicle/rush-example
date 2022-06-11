@@ -27,7 +27,14 @@
     "eslint": "~8.17.0",
     "@local/eslint-config-base": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@local/eslint-config-base": "~1.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@local/eslint-config-base"
+    ]
+  },
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint"
