@@ -29,11 +29,12 @@ jobs:
       - name: Install dependencies
         run: |
           node common/scripts/install-run-rush.js install
+          node common/scripts/install-run-rush.js update
 
       # To run lints and tests we need to ensure all of our dependencies are built first.
       - name: Build all
         run: |
-          node common/scripts/install-run-rush.js build --verbose
+          node common/scripts/install-run-rush.js build  -v -p max
 
       - name: Lint
         run: |
