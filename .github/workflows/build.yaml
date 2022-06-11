@@ -25,7 +25,7 @@ jobs:
 
       - name: Lint
         run: |
-          node common/scripts/install-run-rush.js eslint
+          node common/scripts/install-run-rush.js lint
 
       - name: Run tests
         run: |
