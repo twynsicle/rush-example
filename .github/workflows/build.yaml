@@ -34,7 +34,7 @@ jobs:
       # To run lints and tests we need to ensure all of our dependencies are built first.
       - name: Build all
         run: |
-          node common/scripts/install-run-rush.js build  -v -p max
+          node common/scripts/install-run-rush.js build -v -p max
 
       - name: Lint
         run: |

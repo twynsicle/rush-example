@@ -18080,7 +18080,7 @@ packages:
     dev: false
 
   file:projects/app1.tgz:
-    resolution: {integrity: sha512-df+aJskgVgSS3Olvm6615/3PW0d+Kk1FLGUJ1tWhHrIhXhpOeTrU8OgiDsF7Zu0bAOV9HUQBw5WzOClw+XP6VQ==, tarball: file:projects/app1.tgz}
+    resolution: {integrity: sha512-hBlJIuswnOFVJXOeWHVlmF2GjkEvKfmnJ5atTAJlonzKqtwcgHsbZpCf4QJzKNUKoa9vbo2HQeQD6k1+GCr57Q==, tarball: file:projects/app1.tgz}
     name: '@rush-temp/app1'
     version: 0.0.0
     dependencies:
@@ -18147,7 +18147,7 @@ packages:
     dev: false
 
   file:projects/library1.tgz_693dbb14bb238cfadd9da5f5304ba037:
-    resolution: {integrity: sha512-wCjc8qaAvzGOCOdhnheH6EfDEpXB7x8T8e0JDJpCyIhEiCHLCgKT6DPRlk2VonDW2fpMojsQrnY84pNHy4fEHw==, tarball: file:projects/library1.tgz}
+    resolution: {integrity: sha512-emGBYmZ+9ANAIeV6fNKzKgV6DJHyLThv5vNtIfGre7dZUcB3BpdNt/KpOf3iAKm+GQS3sm/aBc8xJkJkoiH/GQ==, tarball: file:projects/library1.tgz}
     id: file:projects/library1.tgz
     name: '@rush-temp/library1'
     version: 0.0.0
