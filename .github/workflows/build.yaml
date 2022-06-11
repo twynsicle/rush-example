@@ -1,0 +1,36 @@
+name: build
+
+on:
+  push:
+    paths:
+      - /apps
+      - /libraries
+      - /tools
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: |
+          node common/scripts/install-run-rush.js install
+
+      - name: Lint
+        run: |
+          node common/scripts/install-run-rush.js eslint
+
+      - name: Run tests
+        run: |
+          node common/scripts/install-run-rush.js test --verbose
+
+      - name: Build app1
+        run: |
+          node common/scripts/install-run-rush.js build --verbose --to @local/app1
