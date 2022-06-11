@@ -6,8 +6,7 @@
   "scripts": {
     "build": "",
     "build-storybook": "build-storybook",
-    "start": "react-scripts start",
-    "storybook": "start-storybook -p 6006"
+    "start": "start-storybook -p 6006"
   },
   "browserslist": {
     "production": [
@@ -24,6 +23,7 @@
   "dependencies": {
     "@babel/core": "^7.18.2",
     "@local/library1": "^1.0.0",
+    "@local/library2": "^1.0.0",
     "@storybook/addon-actions": "~6.5.6",
     "@storybook/addon-essentials": "~6.5.6",
     "@storybook/addon-interactions": "~6.5.6",

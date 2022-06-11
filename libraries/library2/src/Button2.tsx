@@ -1,8 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import buttonStyles from './button.styles';
+import button2Styles from './button2.styles';
 
-export interface ButtonProps {
+export interface Button2Props {
   primary?: boolean;
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
@@ -10,15 +10,15 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-const useStyles = createUseStyles(buttonStyles);
+const useStyles = createUseStyles(button2Styles);
 
-export const Button = ({
+export const Button2 = ({
   primary = false,
   size = 'medium',
   backgroundColor,
   label,
   ...props
-}: ButtonProps) => {
+}: Button2Props) => {
   const classes = useStyles();
   const mode = primary ? classes.primary : classes.secondary;
 

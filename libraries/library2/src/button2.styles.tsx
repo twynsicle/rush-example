@@ -1,4 +1,4 @@
-const buttonStyles = {
+const button2Styles = {
   button: {
     fontFamily: "'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif",
     fontWeight: 700,
@@ -31,4 +31,4 @@ const buttonStyles = {
   },
 };
 
-export default buttonStyles;
+export default button2Styles;
