@@ -1,5 +1,5 @@
 {
-  "name": "@local/library1",
+  "name": "@local/library2",
   "version": "1.0.0",
   "description": "Library1",
   "main": "dist/index.js",

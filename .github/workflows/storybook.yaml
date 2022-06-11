@@ -22,9 +22,9 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js install
 
-      - name: Build all
+      - name: Build storybook and it's dependencies
         run: |
-          node common/scripts/install-run-rush.js build -v -p max
+          node common/scripts/install-run-rush.js build -t @local/storybook -v -p max
 
       - name: Build Storybook
         working-directory: apps/storybook

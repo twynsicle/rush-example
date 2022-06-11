@@ -222,9 +222,9 @@
     //       "tags": ["tools"]
     //     }
     {
-      "packageName": "@local/eslint-config-base",
-      "projectFolder": "tools/eslint-config-base",
-      "reviewCategory": "tools"
+      "packageName": "@local/app2",
+      "projectFolder": "apps/app2",
+      "reviewCategory": "apps"
     },
     {
       "packageName": "@local/storybook",
@@ -235,6 +235,16 @@
       "packageName": "@local/library1",
       "projectFolder": "libraries/library1",
       "reviewCategory": "libraries"
+    },
+    {
+      "packageName": "@local/library2",
+      "projectFolder": "libraries/library2",
+      "reviewCategory": "libraries"
+    },
+    {
+      "packageName": "@local/eslint-config-base",
+      "projectFolder": "tools/eslint-config-base",
+      "reviewCategory": "tools"
     }
   ]
 }
