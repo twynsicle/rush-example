@@ -1,3 +1,0 @@
-{
-  "extends": ["@local/eslint-config-base"]
-}
