@@ -29,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: |
           node common/scripts/install-run-rush.js install
-          node common/scripts/install-run-rush.js rush update-autoinstaller --name rush-prettier
-          node common/scripts/install-run-rush.js rush update-autoinstaller --name rush-lint-staged
+          node common/scripts/install-run-rush.js update-autoinstaller --name rush-prettier
+          node common/scripts/install-run-rush.js update-autoinstaller --name rush-lint-staged
 
       - name: Lint
         run: |
