@@ -28,6 +28,11 @@
   "devDependencies": {
     "eslint": "~8.17.0"
   },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",

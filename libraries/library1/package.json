@@ -47,6 +47,11 @@
       "optional": true
     }
   },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
