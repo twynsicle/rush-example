@@ -69,7 +69,7 @@ jobs:
           node $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build-storybook
 
       - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@4.3.3
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
           folder: apps/storybook/storybook-static
