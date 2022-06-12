@@ -4,7 +4,7 @@
   "description": "storybook",
   "main": "dist/index.js",
   "scripts": {
-    "build": "build-storybook --quiet",
+    "build": "build-storybook --quiet --loglevel warn",
     "start": "start-storybook -p 6006"
   },
   "browserslist": {

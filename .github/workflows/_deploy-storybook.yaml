@@ -3,8 +3,8 @@ name: deploy-storybook
 on:
   push:
     paths:
-      - apps/storybook
-      - libraries
+      - apps/storybook/**
+      - libraries/**
 
 jobs:
   build-lint:
