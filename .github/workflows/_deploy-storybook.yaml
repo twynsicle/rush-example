@@ -2,9 +2,9 @@ name: deploy-storybook
 
 on:
   push:
-#    paths:
-#      - /apps/storybook
-#      - /libraries
+    paths:
+      - /apps/storybook
+      - /libraries
 
 jobs:
   build-lint:
@@ -14,6 +14,7 @@ jobs:
 
   deploy-storybook:
     runs-on: ubuntu-latest
+    needs: [build-lint]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -41,7 +42,11 @@ jobs:
       - name: Build Storybook
         working-directory: apps/storybook
         run: |
-          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js build-storybook
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js build
+        env:
+          RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
+          RUSH_BUILD_CACHE_ENABLED: 1
+          RUSH_BUILD_CACHE_WRITE_ALLOWED: 1
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4.3.3
