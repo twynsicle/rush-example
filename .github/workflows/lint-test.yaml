@@ -1,11 +1,10 @@
-name: build
+name: lint-test
 
 on:
-  push:
-    paths:
-      - /apps
-      - /libraries
-      - /tools
+  workflow_call:
+    secrets:
+      RUSH_BUILD_CACHE_CREDENTIAL:
+        required: true
 
 jobs:
   build-lint:
@@ -34,6 +33,10 @@ jobs:
       - name: Build all
         run: |
           node common/scripts/install-run-rush.js build -v -p max
+        env:
+          RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
+          RUSH_BUILD_CACHE_ENABLED: 1
+          RUSH_BUILD_CACHE_WRITE_ALLOWED: 1
 
       - name: Lint
         run: |
