@@ -1,0 +1,9 @@
+{
+  "name": "@local/tsconfig-base",
+  "version": "1.0.0",
+  "description": "eslint-base",
+  "main": "tsconfig-base.json",
+  "scripts": {
+    "build": ""
+  }
+}

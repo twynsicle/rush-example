@@ -245,6 +245,11 @@
       "packageName": "@local/eslint-config-base",
       "projectFolder": "tools/eslint-config-base",
       "reviewCategory": "tools"
+    },
+    {
+      "packageName": "@local/tsconfig-base",
+      "projectFolder": "tools/tsconfig-base",
+      "reviewCategory": "tools"
     }
   ]
 }

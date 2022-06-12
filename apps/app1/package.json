@@ -27,7 +27,8 @@
     "@local/eslint-config-base": "^1.0.0"
   },
   "devDependencies": {
-    "@local/eslint-config-base": "^1.0.0"
+    "@local/eslint-config-base": "^1.0.0",
+    "@local/tsconfig-base": "^1.0.0"
   },
   "eslintConfig": {
     "extends": [

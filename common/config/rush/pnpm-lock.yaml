@@ -8,6 +8,7 @@ specifiers:
   '@rush-temp/library1': file:./projects/library1.tgz
   '@rush-temp/library2': file:./projects/library2.tgz
   '@rush-temp/storybook': file:./projects/storybook.tgz
+  '@rush-temp/tsconfig-base': file:./projects/tsconfig-base.tgz
   '@storybook/addon-actions': ~6.5.6
   '@storybook/addon-essentials': ~6.5.6
   '@storybook/addon-interactions': ~6.5.6
@@ -49,6 +50,7 @@ dependencies:
   '@rush-temp/library1': file:projects/library1.tgz_e747a91e14e57789398fd326dee94be0
   '@rush-temp/library2': file:projects/library2.tgz_e747a91e14e57789398fd326dee94be0
   '@rush-temp/storybook': file:projects/storybook.tgz_205747c37fe6eb0c1d7b98bcb0f7ba71
+  '@rush-temp/tsconfig-base': file:projects/tsconfig-base.tgz
   '@storybook/addon-actions': 6.5.8_react-dom@18.1.0+react@18.1.0
   '@storybook/addon-essentials': 6.5.8_e95380974f20edd8ba05ab74582241bf
   '@storybook/addon-interactions': 6.5.8_c1ca121c7e38cf96de82c5dd928cdeb2
@@ -16758,7 +16760,7 @@ packages:
     dev: false
 
   file:projects/library1.tgz_e747a91e14e57789398fd326dee94be0:
-    resolution: {integrity: sha512-t4031lEPB+hUnx91GbbHNQmhjG6RJi0ugoZlyS3UbYQwVUym6xCkvQSx07pekpXlWGzgCyxNYixsfAdljl4G3w==, tarball: file:projects/library1.tgz}
+    resolution: {integrity: sha512-lEy3VQy0WCkGU+cSiPGlt09ZFg24AWqSFY5O0JMg89cXUkFWnBPVGaRAn9u30IriiUNeq9j3qWpgcBW0/Uuacw==, tarball: file:projects/library1.tgz}
     id: file:projects/library1.tgz
     name: '@rush-temp/library1'
     version: 0.0.0
@@ -16825,7 +16827,7 @@ packages:
     dev: false
 
   file:projects/library2.tgz_e747a91e14e57789398fd326dee94be0:
-    resolution: {integrity: sha512-5w0TqwaDyyl6lUHV8BMjSLbs2kc6VVMVwDOrUtLe3unjnAhcFx2wmeoJWYnsAv8WpGg79xxc/7cP/yzsy0vVXQ==, tarball: file:projects/library2.tgz}
+    resolution: {integrity: sha512-6DonwPLNzpLo81ZC51mVdRTVq/1lvkhJRiP+j32fUUQJVHa8r0yl7VEcsWgsqRBs0tpNODI5zP4Pxowpr31fDQ==, tarball: file:projects/library2.tgz}
     id: file:projects/library2.tgz
     name: '@rush-temp/library2'
     version: 0.0.0
@@ -16892,7 +16894,7 @@ packages:
     dev: false
 
   file:projects/storybook.tgz_205747c37fe6eb0c1d7b98bcb0f7ba71:
-    resolution: {integrity: sha512-C5S4dNS2E2eIleA/Ozl313V1+FGbd6r1A8PUkEHPKJS7ukiPDwRjnVT1TIhmDh5cByH7vHI3lNUMmZ0BmEQIhw==, tarball: file:projects/storybook.tgz}
+    resolution: {integrity: sha512-HVPyEQDQ4MEDfCgxELbLrhbbTdQVN/UH0psEeBCUafhfvopgh68uyryM26HuyrjcegJavJM5/gF8R+YdMP06zQ==, tarball: file:projects/storybook.tgz}
     id: file:projects/storybook.tgz
     name: '@rush-temp/storybook'
     version: 0.0.0
@@ -16925,9 +16927,6 @@ packages:
       typescript: 4.7.3
       web-vitals: 2.1.4
     transitivePeerDependencies:
-      - '@babel/plugin-syntax-flow'
-      - '@babel/plugin-transform-react-jsx'
-      - '@parcel/css'
       - '@storybook/addons'
       - '@storybook/angular'
       - '@storybook/builder-manager4'
@@ -16943,33 +16942,18 @@ packages:
       - '@storybook/web-components'
       - '@swc/core'
       - '@testing-library/dom'
-      - '@types/babel__core'
       - '@types/webpack'
       - bluebird
       - bufferutil
-      - canvas
-      - clean-css
-      - csso
-      - debug
       - encoding
       - esbuild
       - eslint
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - fibers
       - lit
       - lit-html
-      - node-notifier
-      - node-sass
-      - rework
-      - rework-visit
-      - sass
-      - sass-embedded
       - sockjs-client
       - supports-color
       - svelte
       - sveltedoc-parser
-      - ts-node
       - type-fest
       - uglify-js
       - utf-8-validate
@@ -16981,4 +16965,10 @@ packages:
       - webpack-dev-server
       - webpack-hot-middleware
       - webpack-plugin-serve
+    dev: false
+
+  file:projects/tsconfig-base.tgz:
+    resolution: {integrity: sha512-7gGeSTFiGslhxXCtPGRGvVYfH8CM5ZFeIYIa3MZOkOIdjNM5cX416ZS2XqAv1WMygwzn/aOwT2sQi34/H0lzpg==, tarball: file:projects/tsconfig-base.tgz}
+    name: '@rush-temp/tsconfig-base'
+    version: 0.0.0
     dev: false
