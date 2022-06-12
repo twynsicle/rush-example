@@ -6,14 +6,8 @@ on:
 #      - apps/app1/**
 
 jobs:
-  build-lint:
-    uses: ./.github/workflows/lint-test.yaml
-    secrets:
-      RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
-
   deploy-storybook:
     runs-on: ubuntu-latest
-    needs: [build-lint]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -56,7 +50,7 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az cdn endpoint purge --content-paths  "/*" --profile-name "rush-example-app1" --name "rush-example-app1" --resource-group "rushexample"
+            az cdn endpoint purge --content-paths  "/*" --profile-name "rush-example-app1" --name "rushexample-app1" --resource-group "rushexample"
 
       - name: logout
         run: |
