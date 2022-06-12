@@ -6,7 +6,7 @@ on:
 #      - apps/app1/**
 
 jobs:
-  deploy-storybook:
+  deploy-app1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
