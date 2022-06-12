@@ -2,8 +2,10 @@ name: deploy-app1
 
 on:
   push:
-#    paths:
-#      - apps/app1/**
+    branches:
+      - main
+    paths:
+      - apps/app1/**
 
 jobs:
   deploy-app1:

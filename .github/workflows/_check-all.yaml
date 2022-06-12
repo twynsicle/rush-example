@@ -1,8 +1,7 @@
 name: check-all
 
 on:
-  workflow_dispatch:
-#  push:
+  push:
 
 jobs:
   build-lint:
