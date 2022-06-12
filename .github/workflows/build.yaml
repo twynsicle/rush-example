@@ -10,10 +10,6 @@ on:
 jobs:
   build-lint:
     runs-on: ubuntu-latest
-    env:
-      RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
-      RUSH_BUILD_CACHE_ENABLED: 1
-      RUSH_BUILD_CACHE_WRITE_ALLOWED: 1
     steps:
       - name: Checkout
         uses: actions/checkout@v2
