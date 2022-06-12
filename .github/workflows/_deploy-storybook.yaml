@@ -38,11 +38,6 @@ jobs:
       - name: Build storybook and it's dependencies
         run: |
           node common/scripts/install-run-rush.js build -t @local/storybook -v -p max
-
-      - name: Build Storybook
-        working-directory: apps/storybook
-        run: |
-          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js build
         env:
           RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
           RUSH_BUILD_CACHE_ENABLED: 1
