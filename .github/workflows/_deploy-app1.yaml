@@ -1,0 +1,64 @@
+name: deploy-app1
+
+on:
+  push:
+#    paths:
+#      - apps/app1/**
+
+jobs:
+  build-lint:
+    uses: ./.github/workflows/lint-test.yaml
+    secrets:
+      RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
+
+  deploy-storybook:
+    runs-on: ubuntu-latest
+    needs: [build-lint]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Cache pnpm
+        uses: actions/cache@v2
+        with:
+          path: |
+            common/temp/pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        run: |
+          node common/scripts/install-run-rush.js install
+
+      - name: Build storybook and it's dependencies
+        run: |
+          node common/scripts/install-run-rush.js build -t @local/app1 -v -p max
+        env:
+          RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
+          RUSH_BUILD_CACHE_ENABLED: 1
+          RUSH_BUILD_CACHE_WRITE_ALLOWED: 1
+
+      - name: Upload to blob storage
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch --account-name rushexample --auth-mode key -d '$web' -s apps/app1/build
+
+      - name: Purge CDN endpoint
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az cdn endpoint purge --content-paths  "/*" --profile-name "rush-example-app1" --name "rush-example-app1" --resource-group "rushexample"
+
+      - name: logout
+        run: |
+          az logout
+        if: always()
