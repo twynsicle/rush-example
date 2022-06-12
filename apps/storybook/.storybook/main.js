@@ -21,4 +21,11 @@ module.exports = {
   core: {
     builder: '@storybook/builder-webpack5',
   },
+  webpack: async (config) => {
+    // Removes warnings from Storybook build.
+    config.performance.hints = false;
+    config.performance.maxEntrypointSize = 5 * 1024 * 1024;
+    config.performance.maxAssetSize = 5 * 1024 * 1024;
+    return config;
+  },
 };
