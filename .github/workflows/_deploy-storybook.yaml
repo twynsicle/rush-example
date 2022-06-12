@@ -1,14 +1,19 @@
-name: storybook
+name: deploy-storybook
 
 on:
-  workflow_run:
-    workflows: [build]
-    types: [completed]
+  push:
+#    paths:
+#      - /apps/storybook
+#      - /libraries
 
 jobs:
+  build-lint:
+    uses: ./.github/workflows/lint-test.yaml
+    secrets:
+      RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
+
   deploy-storybook:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2

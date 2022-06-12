@@ -1,11 +1,10 @@
-name: build
+name: lint-test
 
 on:
-  push:
-#    paths:
-#      - /apps
-#      - /libraries
-#      - /tools
+  workflow_call:
+    secrets:
+      RUSH_BUILD_CACHE_CREDENTIAL:
+        required: true
 
 jobs:
   build-lint:
