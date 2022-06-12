@@ -1,19 +1,22 @@
-name: deploy-storybook
+name: deploy-app1
 
 on:
   push:
     branches:
       - main
     paths:
-      - apps/storybook/**
-      - libraries/**
+      - apps/app1/**
 
 jobs:
-  deploy-storybook:
+  deploy-app1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1
@@ -33,15 +36,25 @@ jobs:
 
       - name: Build storybook and it's dependencies
         run: |
-          node common/scripts/install-run-rush.js build -t @local/storybook -v -p max
+          node common/scripts/install-run-rush.js build -t @local/app1 -v -p max
         env:
           RUSH_BUILD_CACHE_CREDENTIAL: ${{ secrets.RUSH_BUILD_CACHE_CREDENTIAL }}
           RUSH_BUILD_CACHE_ENABLED: 1
           RUSH_BUILD_CACHE_WRITE_ALLOWED: 1
 
-      - name: Deploy to gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+      - name: Upload to blob storage
+        uses: azure/CLI@v1
         with:
-          branch: gh-pages
-          folder: apps/storybook/storybook-static
-          clean: true
+          inlineScript: |
+            az storage blob upload-batch --account-name rushexample --auth-mode key -d '$web' -s apps/app1/build --overwrite true
+
+      - name: Purge CDN endpoint
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az cdn endpoint purge --content-paths  "/*" --profile-name "rush-example-app1" --name "rushexample-app1" --resource-group "rush-example" --no-wait
+
+      - name: logout
+        run: |
+          az logout
+        if: always()
