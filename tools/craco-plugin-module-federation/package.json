@@ -1,0 +1,13 @@
+{
+  "name": "@local/craco-plugin-module-federation",
+  "version": "1.0.0",
+  "description": "craco-plugin-module-federation",
+  "main": "src/index.js",
+  "scripts": {
+    "build": ""
+  },
+  "peerDependencies": {
+    "react-scripts": "^5.0.0",
+    "@craco/craco": "^6.0.0 || ^7.0.0"
+  }
+}

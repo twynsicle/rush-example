@@ -232,6 +232,11 @@
       "reviewCategory": "apps"
     },
     {
+      "packageName": "@local/wrapper",
+      "projectFolder": "apps/wrapper",
+      "reviewCategory": "apps"
+    },
+    {
       "packageName": "@local/library1",
       "projectFolder": "libraries/library1",
       "reviewCategory": "libraries"
@@ -249,6 +254,11 @@
     {
       "packageName": "@local/tsconfig-base",
       "projectFolder": "tools/tsconfig-base",
+      "reviewCategory": "tools"
+    },
+    {
+      "packageName": "@local/craco-plugin-module-federation",
+      "projectFolder": "tools/craco-plugin-module-federation",
       "reviewCategory": "tools"
     }
   ]
