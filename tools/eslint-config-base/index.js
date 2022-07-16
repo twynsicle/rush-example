@@ -7,6 +7,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    // 'plugin:import/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -22,5 +23,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  rules: {},
+  rules: {
+    '@typescript-eslint/ban-ts-comment': 'off',
+  },
 };
