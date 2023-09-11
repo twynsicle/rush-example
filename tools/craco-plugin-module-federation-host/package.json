@@ -1,16 +1,16 @@
 {
-  "name": "@local/craco-plugin-module-federation",
+  "name": "@local/craco-plugin-module-federation-host",
   "version": "1.0.0",
-  "description": "craco-plugin-module-federation",
+  "description": "craco-plugin-module-federation-host",
   "main": "src/index.js",
   "scripts": {
     "build": ""
   },
+  "dependencies": {
+    "external-remotes-plugin": "~1.0.0"
+  },
   "peerDependencies": {
     "react-scripts": "^5.0.0",
     "@craco/craco": "^6.0.0 || ^7.0.0"
-  },
-  "dependencies": {
-    "@module-federation/fmr": "~0.0.7"
   }
 }

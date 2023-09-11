@@ -260,6 +260,11 @@
       "packageName": "@local/craco-plugin-module-federation",
       "projectFolder": "tools/craco-plugin-module-federation",
       "reviewCategory": "tools"
+    },
+    {
+      "packageName": "@local/craco-plugin-module-federation-host",
+      "projectFolder": "tools/craco-plugin-module-federation-host",
+      "reviewCategory": "tools"
     }
   ]
 }

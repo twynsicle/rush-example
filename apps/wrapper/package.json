@@ -35,6 +35,7 @@
     "@local/eslint-config-base": "^1.0.0",
     "@local/tsconfig-base": "^1.0.0",
     "@local/craco-plugin-module-federation": "^1.0.0",
+    "@local/craco-plugin-module-federation-host": "^1.0.0",
     "@craco/craco": "~6.4.5"
   },
   "eslintConfig": {

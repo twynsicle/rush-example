@@ -1,6 +1,6 @@
+const ExternalTemplateRemotesPlugin = require('external-remotes-plugin');
 const webpack = require('webpack');
 const paths = require('react-scripts/config/paths');
-const { MFLiveReloadPlugin } = require('@module-federation/fmr');
 
 // const ModuleFederationConfig = {
 //   ...federation,
@@ -20,7 +20,7 @@ const { MFLiveReloadPlugin } = require('@module-federation/fmr');
 
 const overrideWebpackConfig = ({
   webpackConfig,
-  pluginOptions: { federationConfig, port },
+  pluginOptions: { federationConfig },
   context: { env },
 }) => {
   webpackConfig.output.publicPath = 'auto';
@@ -41,11 +41,7 @@ const overrideWebpackConfig = ({
   webpackConfig.plugins = [
     ...webpackConfig.plugins,
     new webpack.container.ModuleFederationPlugin(federationConfig),
-    new MFLiveReloadPlugin({
-      port: port,
-      container: federationConfig.name,
-      standalone: true,
-    }),
+    // new ExternalTemplateRemotesPlugin(),
   ];
   return webpackConfig;
 };
